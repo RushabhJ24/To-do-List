@@ -1,0 +1,9 @@
+ul {
+    list-style: none;
+    
+    background-color: lightskyblue;
+}
+li{
+    border-bottom: 1px solid gray;
+    line-height: 30px;
+}

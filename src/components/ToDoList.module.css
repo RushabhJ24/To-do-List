@@ -1,0 +1,9 @@
+.groupList{
+    list-style: none;
+    
+    background-color: lightskyblue;
+}
+.groupListItems{
+    border-bottom: 1px solid gray;
+    line-height: 30px;
+}
