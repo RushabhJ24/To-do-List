@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 //import getToDoItems, {getTitle} from '../ds/todos';
 // import "./ToDoList.css"
@@ -19,12 +19,19 @@ lastname: "Jain",
 status: "Default WIP"}, clickevent}){
     // const todoitems = getToDoItems();
     const todoitems=myItems;
+
+    // let selectedIndex=2;
+
+    let [selectedIndex, setSelectedIndex] = useState(-1);
+    
+
     return(
         <><h2>{myTitle}</h2>
         
         <ul className="list-group">
-            {todoitems.map((item)=>(
-                <li key={item} className="list-group-item" onClick={()=>clickevent(item)}>{item}<br/>
+            {todoitems.map((item,index)=>(
+                <li key={item} className={selectedIndex == index ? "list-group-item active" : "list-group-item" } 
+                onClick={()=>setSelectedIndex(index)}>{item}<br/>
                 <small>{taskauthor.firstname} {taskauthor.lastname} - {taskauthor.status}</small></li>
             ))}
             
